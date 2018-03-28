@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Nós
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- lista -->
+  <ion-card>
+    <ion-card-header>
+      Minha primeira lista
+    </ion-card-header>
+
+    <ion-list>
+      <button ion-item *ngFor="let item of lista"> <!-- let diz a variável que vai criar item,
+        e a variável que vai tomar é de lista, que é o nosso array. Ou seja, estamos criando a
+        variável item, que vai se criar em cada ciclo de lista (pega os elementos da lista)
+      -->
+
+        <ion-icon name="cart" item-start [ngStyle]="{'color': item.color}"></ion-icon>
+        {{ item.titulo }} <!-- item, a variável que criamos. titulo que criamos em about.ts
+          na lista 
+        
+          Aqui quer dizer que color do ion-icon, vai tomar o item.color que está sendo criado
+          em cada ciclo, dentro do array que é lista, e propriedade seria o color de item.color,
+          onde foi definido em about.ts em hexadecimal a cor
+        [ngStyle]="{'color: item.color'}"
+              
+        -->
+      </button>
+
+    </ion-list>
+  </ion-card>
+  <!-- lista -->
+</ion-content>

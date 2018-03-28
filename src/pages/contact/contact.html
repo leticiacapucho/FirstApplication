@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Contact
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list> 
+    <!-- 
+        *ngFor="let item of items"  - tá sendo criado o elemento item em cada 
+       ciclo, de uma lista itens.
+
+        Aqui nesse ngFor se comporta como um ciclo for, a lista se encontra em contact.ts 
+  
+    -->
+    <button ion-item *ngFor="let item of minhaLista" (click)="openNavDetailsPage(item)" icon-start>
+
+    <!-- 
+      Além disto, nessa minhaLista está recebendo item.titulo, um logo e um color. Na função acima
+    (click)="openNavDetailsPage(item)", está sendo trabalhado o elemento item
+    -->
+      <ion-icon [name]="'logo-' + item.icon" [ngStyle]="{'color': item.color}" item-start></ion-icon>
+      {{ item.title }}
+    </button>
+  </ion-list>
+</ion-content>

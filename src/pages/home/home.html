@@ -1,0 +1,126 @@
+<ion-header>
+   <ion-navbar color="secondary"> <!-- Arruma a barra superior -->
+    <ion-buttons start>
+      <button ion-button icon-only>
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>Inicio</ion-title>
+
+    <ion-buttons end> <!-- Lupa(search) no canto superior esquerdo -->
+      <button ion-button icon-only>
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<h2>Dados de um servidor externo</h2>
+<!-- aqui mostra todos os usuários de json -->
+<ion-list>
+  <button ion-item *ngFor="let usuario of usuarios"> <!-- esse usuarios foi pego do arquivo de home.ts
+    já o usuario, será uma variável flotante, que vai percorrendo por cada um dos usuários que temos na 
+    lita de usuarios
+  -->
+    {{usuario.id}} - {{usuario.name}} <!-- Aqui está sendo interpolado a variavel e a interação, tais como
+    id e name.
+     -->
+  </button>
+</ion-list> 
+
+
+  <!--
+  
+  // Esse evento click chama a função alertaBasica, que tem suas propiedades em home.ts 
+    <button ion-button block color="dark" (click)="alertaBasica()">Mostrar alerta básica</button>
+    <button ion-button block color="dark" (click)="alertaBasica2()">Alerta 2</button>
+
+=========================================================================================================================
+
+  // Exemplo para definir espaço entra uma coluna e outra, tamanho...
+  <ion-grid>
+    <ion-row>
+      <ion-col col-auto>
+      
+        /*  Utilizando a documentação ionic: https://ionicframework.com/docs/api/components/grid/Grid/
+
+          Para definir quanto de espaço que tem entra uma coluna e outra, posso 
+        colocar na tag:
+        
+        - Colunas de deslocamento:
+
+            <ion-col col-1> 
+            </ion-col>
+            
+            e a:
+
+            <ion-col col-3 col-md-6>
+
+            A tag  <ion-col col-auto> é para que o retangulo acompanhe o tanto de escrito.
+            
+              No alinhamento vertical - uso a tag  dentro de ion-row, o align-items-center.
+              Ex:
+                    <ion-row align-items-center> 
+           
+           */
+        <p>Coluna</p>
+        // Essa tag <p> é pra dar um parágrafo
+    </ion-col>
+      <ion-col col-auto>
+        <p>Coluna</p>
+      </ion-col>
+    </ion-row>
+    <ion-row align-items-center> 
+      <ion-col col-auto>
+        <p>Coluna</p> <br>
+        <p>Coluna que tem outr largura de acordo com o conteudo</p>
+      </ion-col>
+      <ion-col>
+        <p>Coluna</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <p>Exemplo de como ir para outra página</p>
+  <button ion-button (click)="outraPagina()">A outra página</button>
+
+=========================================================================================================================
+
+  // Para criar botão, inserir cor, dentro no botão, ou até mesmo deixar ele contornado.
+    
+  <button ion-button outline>Button</button>
+  <button ion-button color="light">Light</button>
+  <button ion-button>Default</button>
+  <button ion-button color="secondary">Secondary</button>
+  <button ion-button color="danger">Danger</button>
+  <button ion-button color="dark">Dark</button>
+
+      // Float the icon left
+<button ion-button icon-left>
+  <ion-icon name="md-appstore"></ion-icon>
+  Left Icon
+</button>
+
+      // Float the icon right 
+<button ion-button icon-right>
+  Right Icon
+  <ion-icon name="home"></ion-icon>
+</button>
+
+      // Only icon (no text)
+<button ion-button icon-only>
+  <ion-icon name="home"></ion-icon>
+</button>
+
+===================================================================================================
+
+no arquivo variables.scss
+
+  arruma a barra de tarefas.
+
+-->
+
+
+</ion-content>
